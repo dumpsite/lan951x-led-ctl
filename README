@@ -1,0 +1,14 @@
+
+lan951x-led-ctl is a command line tool to control the LEDs connected to a
+LAN9512 or LAN9514 ethernet controller.
+
+Usually those LEDs show the ethernet status like "Link/Activity", "Speed" and
+"Duplex" mode. Using this tool you can turn them off, if you don't like
+a disco in your room at night ;-) Or you can turn them on/off from any shell
+script to show whatever status you wish.
+
+These ethernet and USB controllers are used on many embedded computers like
+Raspberry PI, Olinuxino and many more.
+
+Further info can be found at:
+http://mockmoon-cybernetics.ch/computer/raspberry-pi/lan951x-led-ctl/
