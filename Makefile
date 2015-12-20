@@ -18,9 +18,9 @@ tidy:
 	$(RM) src/*.o $(PROGS)
 
 install: $(PROGS)
-	@$(ECHO) "\t==> Installing programs to $(DESTDIR)/usr/sbin"
-	@install -m 0755 -d $(DESTDIR)/usr/sbin
-	@install -m 0755 -t $(DESTDIR)/usr/sbin $(PROGS)
+	@$(ECHO) "\t==> Installing programs to $(DESTDIR)/usr/bin"
+	@install -m 0755 -d $(DESTDIR)/usr/bin
+	@install -m 0755 -t $(DESTDIR)/usr/bin $(PROGS)
 
 pack:
 	@$(ECHO) "Cleaning up ..." ; \
