@@ -4,8 +4,8 @@ RM	= /bin/rm -f
 CC	= gcc
 STRIP	= strip
 
-CFLAGS	= -g -Os -I./include -Wall -Wstrict-prototypes -Wmissing-prototypes
-CFLAGS	+= -Wshadow -Wextra -Wunused
+CFLAGS	= -g -Os -std=c11 -I./include -Wall -Wstrict-prototypes -Wconversion
+CFLAGS	+= -Wmissing-prototypes -Wshadow -Wextra -Wunused
 LDFLAGS	= -lusb-1.0
 
 PROGS = lan951x-led-ctl
