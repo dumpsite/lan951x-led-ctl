@@ -38,5 +38,5 @@ src/%.o: src/%.c
 # Specific programs
 lan951x-led-ctl:	src/lan951x-led-ctl.o
 	@$(ECHO) "\t==> Linking objects to output file $@"
-	@$(CC) $(CFLAGS) $(LDFLAGS) $+ -o $@
+	$(CC) $(CFLAGS) $+ $(LDFLAGS) -o $@
 	@$(STRIP) $@
