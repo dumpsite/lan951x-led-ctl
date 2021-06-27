@@ -1,7 +1,7 @@
 /*
 	lan951x-led-ctl - control LEDs of LAN951X ethernet/usb controllers
 	
-	Copyright (C) 2015 Dominic Radermacher <dominic.radermacher@gmail.com>
+	Copyright (C) 2015-2020 Dominic Radermacher <dominic@familie-radermacher.ch>
 	
 	This program is free software; you can redistribute it and/or modify it
 	under the terms of the GNU General Public License version 3 as
@@ -27,11 +27,11 @@
 /* global variables */
 int led_arr[3] = { MODE_KEEP, MODE_KEEP, MODE_KEEP };
 
-libusb_device_handle *lan951x_open(int vid, int pid)
+libusb_device_handle* lan951x_open(int vid, int pid)
 {
-	libusb_device **devs;
-	libusb_device *dev;
-	libusb_device_handle *handle = NULL;
+	libusb_device** devs;
+	libusb_device* dev;
+	libusb_device_handle* handle = NULL;
 	struct libusb_device_descriptor desc;
 	int r,i=0;
 	
@@ -66,17 +66,17 @@ libusb_device_handle *lan951x_open(int vid, int pid)
 	return NULL;
 }
 
-int lan951x_rd_reg(libusb_device_handle *h, uint16_t reg, uint32_t *val)
+int lan951x_rd_reg(libusb_device_handle* h, uint16_t reg, uint32_t* val)
 {
 	return libusb_control_transfer(h, LIBUSB_REQUEST_TYPE_VENDOR|0x80,
-		USB_VENDOR_REQUEST_RD_REG, 0, reg, (uint8_t *)val, 4,
+		USB_VENDOR_REQUEST_RD_REG, 0, reg, (uint8_t*)val, 4,
 		USB_CTRL_TIMEOUT);
 }
 
-int lan951x_wr_reg(libusb_device_handle *h, uint16_t reg, uint32_t val)
+int lan951x_wr_reg(libusb_device_handle* h, uint16_t reg, uint32_t val)
 {
 	return libusb_control_transfer(h, LIBUSB_REQUEST_TYPE_VENDOR,
-		USB_VENDOR_REQUEST_WR_REG, 0, reg, (uint8_t *)&val, 4,
+		USB_VENDOR_REQUEST_WR_REG, 0, reg, (uint8_t*)&val, 4,
 		USB_CTRL_TIMEOUT);
 }
 
@@ -122,9 +122,9 @@ int parse_args(int argc, char **argv)
 	return i;
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-	libusb_device_handle *handle = NULL;
+	libusb_device_handle* handle = NULL;
 	uint32_t val;
 
 	if (argc < 2) {

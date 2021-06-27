@@ -1,17 +1,17 @@
 /*
 	lan951x-led-ctl - control LEDs of LAN951X ethernet/usb controllers
-	
-	Copyright (C) 2015 Dominic Radermacher <dominic.radermacher@gmail.com>
-	
+
+	Copyright (C) 2015-2020 Dominic Radermacher <dominic@familie-radermacher.ch>
+
 	This program is free software; you can redistribute it and/or modify it
 	under the terms of the GNU General Public License version 3 as
 	published by the Free Software Foundation
-	
+
 	This program is distributed in the hope that it will be useful, but
 	WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 	See the GNU General Public License for more details.
-	
+
 	You should have received a copy of the GNU General Public License
 	along with this program; if not, write to the Free Software Foundation,
 	Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
@@ -56,7 +56,7 @@
 
 void usage(void);
 int ledmode(const char* str);
-int parse_args(int argc, char **argv);
-libusb_device_handle *lan951x_open(int vid, int pid);
-int lan951x_rd_reg(libusb_device_handle *h, uint16_t reg, uint32_t *val);
-int lan951x_wr_reg(libusb_device_handle *h, uint16_t reg, uint32_t val);
+int parse_args(int argc, char** argv);
+libusb_device_handle* lan951x_open(int vid, int pid);
+int lan951x_rd_reg(libusb_device_handle* h, uint16_t reg, uint32_t* val);
+int lan951x_wr_reg(libusb_device_handle* h, uint16_t reg, uint32_t val);
