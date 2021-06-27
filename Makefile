@@ -22,8 +22,8 @@ tidy:
 
 install: $(PROGS)
 	@$(ECHO) "\t==> Installing programs to $(DESTDIR)/usr/bin"
-	@install -m 0755 -d $(DESTDIR)/usr/bin
-	@install -m 0755 -t $(DESTDIR)/usr/bin $(PROGS)
+	@install -m 0755 -d $(DESTDIR)/bin
+	@install -m 0755 -t $(DESTDIR)/bin $(PROGS)
 
 pack:
 	@$(ECHO) "Cleaning up ..." ; \
