@@ -21,16 +21,9 @@ tidy:
 	$(RM) src/*.o $(PROGS)
 
 install: $(PROGS)
-	@$(ECHO) "\t==> Installing programs to $(DESTDIR)/usr/bin"
+	@$(ECHO) "\t==> Installing programs to $(DESTDIR)/bin"
 	@install -m 0755 -d $(DESTDIR)/bin
 	@install -m 0755 -t $(DESTDIR)/bin $(PROGS)
-
-pack:
-	@$(ECHO) "Cleaning up ..." ; \
-	$(RM) src/*.o $(PROGS)
-	@$(ECHO) "Creating package ..." ; \
-	cd .. ; \
-	tar c -J -f lan951x-led-ctl-$$GIT_VERSION.tar.xz lan951x-led-ctl
 
 # Generic instructions
 src/%.o: src/%.c

@@ -55,6 +55,7 @@
 #define MODE_ERR	-1
 
 void usage(void);
+void about(void);
 int ledmode(const char* str);
 int parse_args(int argc, char** argv);
 libusb_device_handle* lan951x_open(int vid, int pid);

@@ -100,6 +100,14 @@ void usage(void)
 	exit(1);
 }
 
+void about(void)
+{
+	printf("lan951x-led-ctl %s programmed by Dominic Radermacher\n", VERSION);
+	printf("For further info or latest version see\n");
+	printf("https://mockmoon-cybernetics.ch/computer/raspberry-pi/lan951x-led-ctl/\n");
+	exit(1);
+}
+
 int parse_args(int argc, char **argv)
 {
 	int i;
@@ -115,6 +123,8 @@ int parse_args(int argc, char **argv)
 		} else if (strncmp(p, "--spd=", 6) == 0) {
 			led_arr[SPDIDX] = ledmode(p+6);
 			printf("setting SPD LED to status %i\n", led_arr[SPDIDX]);
+		} else if (strcmp(p, "--version") == 0) {
+			about();
 		} else {
 			usage();
 		}
