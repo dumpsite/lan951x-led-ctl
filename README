@@ -8,7 +8,7 @@ a disco in your room at night ;-) Or you can turn them on/off from any shell
 script to show whatever status you wish.
 
 These ethernet and USB controllers are used on many embedded computers like
-Raspberry PI, Olinuxino and many more.
+Raspberry Pi (until Version 3 B - but not 3 B Plus), Olinuxino and many more.
 
 Further info can be found at:
 https://mockmoon-cybernetics.ch/computer/raspberry-pi/lan951x-led-ctl/
