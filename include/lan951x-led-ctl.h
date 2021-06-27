@@ -17,8 +17,6 @@
 	Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 */
 
-#define VERSION "1.0"
-
 #define USB_CTRL_TIMEOUT	(5000)
 #define LAN951X_VENDOR_ID	(0x0424)
 #define	LAN951X_PRODUCT_ID	(0xec00)
