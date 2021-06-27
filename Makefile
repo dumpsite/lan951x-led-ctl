@@ -4,8 +4,11 @@ RM	= /bin/rm -f
 CC	= gcc
 STRIP	= strip
 
+GIT_VERSION := $(shell git --no-pager describe --tags --dirty |sed 's/\([^-]*-g\)/r\1/;s/-/./g')
+
 CFLAGS	= -g -Os -std=c11 -I./include -Wall -Wstrict-prototypes -Wconversion
 CFLAGS	+= -Wmissing-prototypes -Wshadow -Wextra -Wunused
+CFLAGS	+= -DVERSION=\"$(GIT_VERSION)\"
 LDFLAGS	= -lusb-1.0
 
 PROGS = lan951x-led-ctl
@@ -18,17 +21,9 @@ tidy:
 	$(RM) src/*.o $(PROGS)
 
 install: $(PROGS)
-	@$(ECHO) "\t==> Installing programs to $(DESTDIR)/usr/bin"
-	@install -m 0755 -d $(DESTDIR)/usr/bin
-	@install -m 0755 -t $(DESTDIR)/usr/bin $(PROGS)
-
-pack:
-	@$(ECHO) "Cleaning up ..." ; \
-	$(RM) src/*.o $(PROGS)
-	@$(ECHO) "Creating package ..." ; \
-	VERSION=`cat include/lan951x-led-ctl.h |grep VERSION |cut -d "\"" -f 2` ; \
-	cd .. ; \
-	tar c -J -f lan951x-led-ctl-$$VERSION.tar.xz lan951x-led-ctl
+	@$(ECHO) "\t==> Installing programs to $(DESTDIR)/bin"
+	@install -m 0755 -d $(DESTDIR)/bin
+	@install -m 0755 -t $(DESTDIR)/bin $(PROGS)
 
 # Generic instructions
 src/%.o: src/%.c
